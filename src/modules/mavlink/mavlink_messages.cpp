@@ -121,6 +121,7 @@ using matrix::wrap_2pi;
 #include "streams/EXTENDED_SYS_STATE.hpp"
 #include "streams/FLIGHT_INFORMATION.hpp"
 #include "streams/HIGH_LATENCY2.hpp"
+#include "streams/LINK_NODE_STATUS.hpp"
 #include "streams/PROTOCOL_VERSION.hpp"
 #include "streams/RAW_RPM.hpp"
 #include "streams/STORAGE_INFORMATION.hpp"
@@ -5303,6 +5304,9 @@ static const StreamListItem streams_list[] = {
 #if defined(AUTOPILOT_VERSION_HPP)
 	create_stream_list_item<MavlinkStreamAutopilotVersion>(),
 #endif // AUTOPILOT_VERSION_HPP
+#if defined(LINK_NODE_STATUS_HPP)
+	create_stream_list_item<MavlinkStreamLinkNodeStatus>(),
+#endif // LINK_NODE_STATUS_HPP
 #if defined(PROTOCOL_VERSION_HPP)
 	create_stream_list_item<MavlinkStreamProtocolVersion>(),
 #endif // PROTOCOL_VERSION_HPP
